@@ -14,3 +14,4 @@ priority: 2
 - ![VRCD 文档库](/favicons/docs.vrcd.org.cn.png) [VRCD 文档库](https://docs.vrcd.org.cn) - 中文 VRChat 创作者维基/知识库
 - ![VRChat 汉化文档中心](/favicons/docs.vrczh.org.png) [VRChat 汉化文档中心](https://docs.vrczh.org) - VRChat 官方英文文档翻译成简体中文的镜像站
 - ![Kipfel 文档](/favicons/MM.png) [Kipfel 文档](https://docs.kipfel.wiki/) - 关于本网站以及旗下视频解析网站的文档
+- ![日文VRChat Wiki](/favicons/hello.vrchat.com.png) [日文VRChat Wiki](https://vrchat.jp.playing.wiki) - 日本社区维护的VRChat信息维基站点，包含游戏基础知识、设备要求、账户及软件安装等日文教程
