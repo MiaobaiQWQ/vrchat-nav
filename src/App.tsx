@@ -650,6 +650,78 @@ export default function App() {
             ))
           )}
           
+          {/* 免责声明 */}
+          <div className="disclaimer-section">
+            <details className="disclaimer-details">
+              <summary className="disclaimer-summary">
+                <svg className="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                </svg>
+                <span>免责声明</span>
+                <svg className="disclaimer-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </summary>
+              <div className="disclaimer-content">
+                <div className="disclaimer-grid">
+                  <div className="disclaimer-card">
+                    <div className="disclaimer-card-header">
+                      <svg className="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                      <span className="disclaimer-card-title">所有权</span>
+                    </div>
+                    <p className="disclaimer-card-text">本网站（含所有子页面）及所属域名均为个人所有，并非由「kipfel社区团队」制作或运营。若站内任何内容涉及侵权，权利人提出有效证明后，我将立即下架对应资源。</p>
+                  </div>
+                  
+                  <div className="disclaimer-card">
+                    <div className="disclaimer-card-header">
+                      <svg className="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <span className="disclaimer-card-title">团队立场</span>
+                    </div>
+                    <p className="disclaimer-card-text">本团队全体成员（共3人）绝不参与任何VRChat社团、群组的纠纷或对立事件，亦不会在旗下导航站或文档站中展示任何与群组相关的内容（如宣传、排行榜等）。</p>
+                  </div>
+                  
+                  <div className="disclaimer-card">
+                    <div className="disclaimer-card-header">
+                      <svg className="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                      </svg>
+                      <span className="disclaimer-card-title">官方域名</span>
+                    </div>
+                    <div className="disclaimer-tags">
+                      <span className="disclaimer-tag">kipfel.wiki</span>
+                      <span className="disclaimer-tag">kipfel.cn</span>
+                      <span className="disclaimer-tag">kipfel.link</span>
+                    </div>
+                    <p className="disclaimer-card-subtitle">联系邮箱</p>
+                    <div className="disclaimer-tags">
+                      <span className="disclaimer-tag">admin@kipfel.link</span>
+                      <span className="disclaimer-tag">xiao-luo@kipfel.cn</span>
+                      <span className="disclaimer-tag">onedrive@kipfel.cn</span>
+                    </div>
+                  </div>
+                  
+                  <div className="disclaimer-card">
+                    <div className="disclaimer-card-header">
+                      <svg className="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                      </svg>
+                      <span className="disclaimer-card-title">第三方免责</span>
+                    </div>
+                    <p className="disclaimer-card-text">cn.kipfel.link 并非本团队持有或管理，该域名已分配给其他团队独立运营。若该域名引发任何社区纠纷或争议，一切后果均与本团队无关，我们不对其内容及行为承担任何责任。</p>
+                  </div>
+                </div>
+                <div className="disclaimer-footer">
+                  <span className="disclaimer-date">发布日期：2026年7月1日</span>
+                  <span className="disclaimer-team">kipfel团队（3人）</span>
+                </div>
+              </div>
+            </details>
+          </div>
+
           {/* 页脚 */}
           <footer className="footer">
             <div className="footer-content">
