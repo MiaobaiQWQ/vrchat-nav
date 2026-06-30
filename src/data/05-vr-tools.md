@@ -5,9 +5,10 @@ priority: 5
 
 ## 工具
 - ![VRCX](/favicons/VRCX.ico) [VRCX](https://github.com/vrcx-team/VRCX) - 最流行的 VRChat 社交管理工具，支持好友/世界/模型管理 | [GitHub](https://github.com/vrcx-team/VRCX) | [加速下载 VRCX_2026.05.03](https://openlist.kipfel.link/vrchat/GitHub/VRCX/VRCX_2026.05.03)
-- ![VRCT](/favicons/vrct.png) [VRCT](https://github.com/misyaguziya/VRCT) - 一个本地运行的翻译工具 | [GitHub](https://github.com/misyaguziya/VRCT) | [加速下载 VRCT_3.4.3](https://openlist.kipfel.link/vrchat/GitHub/VRCT/VRCT_3.4.3)
+- ![VRCT](/favicons/vrct.png) [VRCT](https://github.com/misyaguziya/VRCT) - VRCT是一种软件，通过提供聊天或语音翻译，支持不同语言之间的对话。 这些功能设计用于VRChat。 | [GitHub](https://github.com/misyaguziya/VRCT) | [加速下载 VRCT_3.4.3](https://openlist.kipfel.link/vrchat/GitHub/VRCT/VRCT_3.4.3)
 - ![TAPI](/favicons/TAPI.png) [TAPI](https://booth.pm/zh-cn/items/7047187) - 一个 VRChat 用的多语言键盘，分免费和付费 | [原链接](https://booth.pm/zh-cn/items/7047187) | [加速下载](https://openlist.kipfel.link/vrchat/booth/Tapi%E5%85%8D%E8%B4%B9%E7%89%88)
 - ![VRCOSC](/favicons/vrcosc.com.ico) [VRCOSC](https://vrcosc.com) - 模块化的 OSC 程序创建器、工具包和路由器。可用来在 VRChat 中显示心率、时间、硬件状态，实现语音转文字，控制 Spotify 等 | [官网](https://vrcosc.com/) | [加速下载 2026.501.0](https://openlist.kipfel.link/vrchat/BOOTH/VRCOSC/2026.501.0)
+- ![AI和Desktop+](/favicons/store.steampowered.com.png) [Desktop+](https://store.steampowered.com/app/1494460/Desktop/) - 一种基于AI语音输入法和desktop+的无言势输入方案 | [Steam](https://store.steampowered.com/app/1494460/Desktop/) | [哔哩哔哩](https://www.bilibili.com/video/BV1qXTu6VE5i)
 
 ## 插件
 ### 付费插件
