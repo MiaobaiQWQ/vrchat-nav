@@ -46,7 +46,7 @@ priority: 6
 ### 改模教程
 
 - ![VRLearn](/favicons/VRLearn.png) [VRLearn](https://start.gamemode1.com/) - 改模入门教程 | [VRLearn](https://start.gamemode1.com/) | [哔哩哔哩](https://space.bilibili.com/2796549)
-- ![哔哩哔哩](/favicons/blbl.ico) [合集·牢云的VRC改模教程系列（更新中）](https://b23.tv/oAOcear) - 牢云的VRC改模教程系列 | [哔哩哔哩](https://b23.tv/oAOcear) | [加速下载](https://openlist.kipfel.link/vrchat/%E6%94%B9%E6%A8%A1%E6%95%99%E7%A8%8B/%E7%89%A2%E4%BA%91%E7%9A%84VRC%E6%94%B9%E6%A8%A1%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6)
+- ![哔哩哔哩](/favicons/blbl.ico) [合集·牢云的VRC改模教程系列（更新中）](https://b23.tv/oAOcear) - 牢云的VRC改模教程系列 | [哔哩哔哩](https://b23.tv/oAOcear) | [配套插件下载](https://openlist.kipfel.link/vrchat/%E6%94%B9%E6%A8%A1%E6%95%99%E7%A8%8B/%E7%89%A2%E4%BA%91%E7%9A%84VRC%E6%94%B9%E6%A8%A1%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6) | [沉浸式翻译](https://immersivetranslate.com/zh-Hans/)
 
 ---
 
