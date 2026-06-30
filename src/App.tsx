@@ -97,8 +97,107 @@ function NavCard({ item }: { item: NavItem }) {
 }
 
 /**
+ * 递归计算子分类的链接数
+ */
+const countSubCategoryLinks = (subCategories: NavSubCategory[]): number => {
+  return subCategories.reduce((sum, sub) => {
+    return sum + sub.items.length + countSubCategoryLinks(sub.subCategories);
+  }, 0);
+};
+
+/**
+ * 递归检查子分类是否有匹配的内容
+ */
+const hasSubCategoryMatch = (subCategories: NavSubCategory[], searchTerm: string): boolean => {
+  return subCategories.some((sub) => {
+    const hasMatchingItems = sub.items.some(
+      (item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.url.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    const hasMatchingChildSubs = hasSubCategoryMatch(sub.subCategories, searchTerm);
+    return hasMatchingItems || hasMatchingChildSubs;
+  });
+};
+
+/**
+ * 递归的子分类侧边栏项组件
+ */
+function SidebarSubCategoryItem({
+  sub,
+  subId,
+  expandedCategories,
+  toggleCategoryExpanded,
+  setSidebarOpen,
+  searchTerm
+}: {
+  sub: NavSubCategory;
+  subId: string;
+  expandedCategories: Set<string>;
+  toggleCategoryExpanded: (id: string, e: React.MouseEvent) => void;
+  setSidebarOpen: (open: boolean) => void;
+  searchTerm: string;
+}) {
+  const isExpanded = expandedCategories.has(subId);
+  
+  // 检查子分类是否有匹配的内容
+  const hasContent = useMemo(() => {
+    if (!searchTerm.trim()) return true;
+    return hasSubCategoryMatch([sub], searchTerm);
+  }, [sub, searchTerm]);
+  
+  if (!hasContent) return null;
+  
+  return (
+    <div key={subId} className="sidebar-subcategory-wrapper">
+      <button
+        className="sidebar-subcategory-item"
+        onClick={(e) => {
+          e.stopPropagation();
+          const el = document.getElementById(subId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setSidebarOpen(false);
+          }
+        }}
+      >
+        {sub.subCategories.length > 0 && (
+          <div
+            className="sidebar-nav-chevron-btn"
+            onClick={(e) => toggleCategoryExpanded(subId, e)}
+          >
+            <ChevronRight className={`sidebar-nav-chevron ${isExpanded ? 'sidebar-nav-chevron-active' : ''}`} />
+          </div>
+        )}
+        {sub.subCategories.length === 0 && (
+          <div className="sidebar-nav-chevron-placeholder" />
+        )}
+        <FolderOpen className="sidebar-subcategory-icon" />
+        <span className="sidebar-subcategory-label">{sub.name}</span>
+      </button>
+      {isExpanded && sub.subCategories.length > 0 && (
+        <div className="sidebar-nested-subcategories">
+          {sub.subCategories.map((childSub, childIdx) => (
+            <SidebarSubCategoryItem
+              key={`${subId}-child-${childIdx}`}
+              sub={childSub}
+              subId={`${subId}-child-${childIdx}`}
+              expandedCategories={expandedCategories}
+              toggleCategoryExpanded={toggleCategoryExpanded}
+              setSidebarOpen={setSidebarOpen}
+              searchTerm={searchTerm}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
  * 子分类区域组件
- * 展示一个子分类及其下的导航卡片
+ * 展示一个子分类及其下的导航卡片，支持无限嵌套
  * @param sub - 子分类数据
  * @param searchTerm - 搜索关键词（用于过滤）
  * @param subcategoryId - 子分类 ID（用于滚动定位）
@@ -124,8 +223,17 @@ function SubCategorySection({
     );
   }, [sub.items, searchTerm]);
 
+  // 过滤子分类（递归检查是否有匹配的内容）
+  const filteredSubCategories = useMemo(() => {
+    if (!searchTerm.trim()) return sub.subCategories;
+    return sub.subCategories.filter((childSub) => {
+      return hasSubCategoryMatch([childSub], searchTerm);
+    });
+  }, [sub.subCategories, searchTerm]);
+
   // 如果没有匹配项，不渲染
-  if (filteredItems.length === 0) return null;
+  const hasContent = filteredItems.length > 0 || filteredSubCategories.length > 0;
+  if (!hasContent) return null;
 
   return (
     <div id={subcategoryId} className="subcategory">
@@ -133,11 +241,22 @@ function SubCategorySection({
         <FolderOpen className="subcategory-icon" />
         <h3 className="subcategory-title">{sub.name}</h3>
       </div>
-      <div className="nav-grid">
-        {filteredItems.map((item, idx) => (
-          <NavCard key={`${item.url}-${idx}`} item={item} />
-        ))}
-      </div>
+      {filteredItems.length > 0 && (
+        <div className="nav-grid">
+          {filteredItems.map((item, idx) => (
+            <NavCard key={`${item.url}-${idx}`} item={item} />
+          ))}
+        </div>
+      )}
+      {/* 递归渲染子分类 */}
+      {filteredSubCategories.map((childSub, idx) => (
+        <SubCategorySection
+          key={`${childSub.name}-${idx}`}
+          sub={childSub}
+          searchTerm={searchTerm}
+          subcategoryId={`${subcategoryId}-child-${idx}`}
+        />
+      ))}
     </div>
   );
 }
@@ -172,14 +291,10 @@ function CategorySection({
 
   // 检查是否有子分类包含匹配项
   const hasSubResults = category.subCategories.some((sub) => {
-    if (!searchTerm.trim()) return sub.items.length > 0;
-    const term = searchTerm.toLowerCase();
-    return sub.items.some(
-      (item) =>
-        item.title.toLowerCase().includes(term) ||
-        item.description?.toLowerCase().includes(term) ||
-        item.url.toLowerCase().includes(term)
-    );
+    if (!searchTerm.trim()) {
+      return sub.items.length > 0 || countSubCategoryLinks(sub.subCategories) > 0;
+    }
+    return hasSubCategoryMatch([sub], searchTerm);
   });
 
   // 如果没有任何匹配项，不渲染
@@ -345,14 +460,7 @@ export default function App() {
           item.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
           item.url.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      const subMatch = cat.subCategories.some((sub) =>
-        sub.items.some(
-          (item) =>
-            item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.url.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-      );
+      const subMatch = hasSubCategoryMatch(cat.subCategories, searchTerm.toLowerCase());
       return directMatch || subMatch;
     });
   }, [categories, searchTerm]);
@@ -363,7 +471,7 @@ export default function App() {
   const totalLinks = useMemo(
     () =>
       categories.reduce(
-        (sum, cat) => sum + cat.items.length + cat.subCategories.reduce((s, sc) => s + sc.items.length, 0),
+        (sum, cat) => sum + cat.items.length + countSubCategoryLinks(cat.subCategories),
         0
       ),
     [categories]
@@ -398,18 +506,7 @@ export default function App() {
     });
   };
 
-  /**
-   * 滚动到指定子分类
-   * @param id - 子分类 ID
-   */
-  const scrollToSubCategory = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setSidebarOpen(false);
-    }
-  };
+
 
   // 显示启动画面
   if (showSplash) {
@@ -457,12 +554,12 @@ export default function App() {
                   onClick={() => scrollToCategory(catId)}
                 >
                   {cat.subCategories.length > 0 && (
-                    <button
+                    <div
                       className="sidebar-nav-chevron-btn"
                       onClick={(e) => toggleCategoryExpanded(catId, e)}
                     >
                       <ChevronRight className={`sidebar-nav-chevron ${isExpanded ? 'sidebar-nav-chevron-active' : ''}`} />
-                    </button>
+                    </div>
                   )}
                   {cat.subCategories.length === 0 && (
                     <div className="sidebar-nav-chevron-placeholder" />
@@ -472,18 +569,19 @@ export default function App() {
                   </div>
                   <span className="sidebar-nav-label">{cat.name}</span>
                 </button>
-                {/* 展开显示的子分类 */}
+                {/* 展开显示的子分类，支持无限嵌套 */}
                 {isExpanded && cat.subCategories.length > 0 && (
                   <div className="sidebar-subcategories">
                     {cat.subCategories.map((sub, subIdx) => (
-                      <button
+                      <SidebarSubCategoryItem
                         key={`${catId}-sub-${subIdx}`}
-                        className="sidebar-subcategory-item"
-                        onClick={(e) => scrollToSubCategory(`${catId}-sub-${subIdx}`, e)}
-                      >
-                        <FolderOpen className="sidebar-subcategory-icon" />
-                        <span className="sidebar-subcategory-label">{sub.name}</span>
-                      </button>
+                        sub={sub}
+                        subId={`${catId}-sub-${subIdx}`}
+                        expandedCategories={expandedCategories}
+                        toggleCategoryExpanded={toggleCategoryExpanded}
+                        setSidebarOpen={setSidebarOpen}
+                        searchTerm={searchTerm}
+                      />
                     ))}
                   </div>
                 )}

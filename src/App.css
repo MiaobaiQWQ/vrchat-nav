@@ -406,6 +406,22 @@ body {
   margin-bottom: 8px;
 }
 
+.sidebar-subcategory-wrapper {
+  margin-bottom: 4px;
+}
+
+.sidebar-nested-subcategories {
+  margin-left: 20px;
+  padding-left: 16px;
+  border-left: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+[data-theme="dark"] .sidebar-nested-subcategories {
+  border-left-color: #2e2e32;
+}
+
 [data-theme="dark"] .sidebar-subcategories {
   border-left-color: #2e2e32;
 }
@@ -734,7 +750,7 @@ body {
 .content {
   flex: 1;
   padding: 32px;
-  max-width: 1400px;
+  width: 100%;
 }
 
 /* Category Section */
@@ -805,6 +821,7 @@ body {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   transition: all 0.3s ease;
+  max-width: max-content;
 }
 
 [data-theme="dark"] .notice-card {
@@ -838,8 +855,8 @@ body {
 
 /* Navigation Grid & Cards */
 .nav-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -855,6 +872,10 @@ body {
   transition: all 0.2s ease;
   position: relative;
   color: inherit;
+  width: 340px;
+  flex-shrink: 0;
+  min-height: 140px;
+  justify-content: space-between;
 }
 
 [data-theme="dark"] .nav-card {
@@ -935,9 +956,8 @@ body {
   font-size: 16px;
   font-weight: 600;
   color: #111827;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
   transition: color 0.3s ease;
 }
 
@@ -987,6 +1007,8 @@ body {
   border-top: 1px solid #f3f4f6;
   overflow: hidden;
   min-width: 0;
+  min-height: 32px;
+  align-items: center;
 }
 
 [data-theme="dark"] .nav-card-quick-links {

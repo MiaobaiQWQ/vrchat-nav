@@ -68,10 +68,8 @@ function parseMarkdownBody(mdContent: string, categoryName: string): NavCategory
     notices: []
   };
 
-  // 当前正在处理的子分类
-  let currentSubCategory: NavSubCategory | null = null;
-  // 上一个标题的深度
-  let lastHeadingDepth = 0;
+  // 使用栈来管理嵌套的子分类
+  const categoryStack: Array<{ depth: number; subCategory: NavSubCategory }> = [];
 
   // 遍历所有 Markdown token
   for (let i = 0; i < tokens.length; i++) {
@@ -81,27 +79,42 @@ function parseMarkdownBody(mdContent: string, categoryName: string): NavCategory
     if (token.type === 'heading') {
       const depth = token.depth;
 
-      // 二级或三级标题作为子分类标题
-      if (depth === 2 || depth === 3) {
-        // 如果有当前子分类且有内容，先保存
-        if (currentSubCategory && currentSubCategory.items.length > 0) {
-          category.subCategories.push(currentSubCategory);
+      // 二级及以上标题作为子分类标题
+      if (depth >= 2) {
+        // 弹出栈中深度 >= 当前深度的元素
+        while (categoryStack.length > 0 && categoryStack[categoryStack.length - 1].depth >= depth) {
+          categoryStack.pop();
         }
+
         // 创建新的子分类
-        currentSubCategory = {
+        const newSubCategory: NavSubCategory = {
           name: token.text,
-          items: []
+          items: [],
+          subCategories: []
         };
-        lastHeadingDepth = depth;
+
+        if (categoryStack.length === 0) {
+          // 栈为空，直接添加到根分类
+          category.subCategories.push(newSubCategory);
+        } else {
+          // 添加到栈顶子分类的 subCategories 中
+          categoryStack[categoryStack.length - 1].subCategory.subCategories.push(newSubCategory);
+        }
+
+        // 将新子分类压入栈
+        categoryStack.push({
+          depth,
+          subCategory: newSubCategory
+        });
       }
     }
     // 处理列表 token（导航项）
     else if (token.type === 'list') {
       // 确定要添加到哪个列表
-      const targetItems =
-        (lastHeadingDepth === 2 || lastHeadingDepth === 3) && currentSubCategory
-          ? currentSubCategory.items
-          : category.items;
+      let targetItems: NavItem[] = category.items;
+      if (categoryStack.length > 0) {
+        targetItems = categoryStack[categoryStack.length - 1].subCategory.items;
+      }
 
       // 解析列表中的每一项
       for (const item of token.items) {
@@ -124,10 +137,10 @@ function parseMarkdownBody(mdContent: string, categoryName: string): NavCategory
         category.notices?.push(cleanHtml);
       } else {
         // 否则尝试解析为导航项
-        const targetItems =
-          (lastHeadingDepth === 2 || lastHeadingDepth === 3) && currentSubCategory
-            ? currentSubCategory.items
-            : category.items;
+        let targetItems: NavItem[] = category.items;
+        if (categoryStack.length > 0) {
+          targetItems = categoryStack[categoryStack.length - 1].subCategory.items;
+        }
 
         const parsedItem = parseParagraphLink(token.text);
         if (parsedItem) {
@@ -135,11 +148,6 @@ function parseMarkdownBody(mdContent: string, categoryName: string): NavCategory
         }
       }
     }
-  }
-
-  // 保存最后一个子分类
-  if (currentSubCategory && currentSubCategory.items.length > 0) {
-    category.subCategories.push(currentSubCategory);
   }
 
   return category;

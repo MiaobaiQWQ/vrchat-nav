@@ -5,27 +5,23 @@ priority: 6
 
 ### 官方工具
 
-- ![VCC](/favicons/vcc.docs.vrchat.com.png) [VRChat Creator Companion (VCC)](https://vrchat.com/download/vcc) - VRChat 官方推荐的 Unity 项目管理工具，用于管理 SDK、包依赖
-- ![Unity](/favicons/Unity.ico) [Unity 2022.3.22f1](https://unity.com/releases/editor/whats-new/2022.3.22f1) - VRChat 推荐使用的 Unity 版本 | [官方页面](https://unity.com/releases/editor/whats-new/2022.3.22f1) | [加速下载](https://OpenList.kipfel.link/vrchat/unity/Unity%202022.3.22f1)
-
-### Unity插件
-
-- ![GitHub](/favicons/github.com.png) [Gesture Manager](https://github.com/BlackStartx/VRC-Gesture-Manager/releases) - 在Unity编辑器中直接预览VRChat轮盘 | [加速下载 3.9.8](https://openlist.kipfel.link/vrchat/GitHub/Gesture-Manager/3.9.8) | [GitHub](https://github.com/BlackStartx/VRC-Gesture-Manager/)
-- ![GitHub](/favicons/github.com.png) [Modular Avatar](https://modular-avatar.nadena.dev/) - 一键绑骨、骨骼代理、形态键同步、菜单模块、合并动画控制器、合并参数、WD匹配等 | [官网](https://modular-avatar.nadena.dev/) | [VPM加速](https://vpm.vrczh.org/vpm/nadena) | [GitHub](https://github.com/bdunderscore/modular-avatar)
-- ![GitHub](/favicons/github.com.png) [FaceEmo](https://suzuryg.github.io/face-emo/) - 专为 VRChat Avatars 3.0 设计的表情创建与配置工具。常与各类付费/免费的表情套装配合使用 | [官网](https://suzuryg.github.io/face-emo/) | [Booth](https://booth.pm/ja/items/4915091) | [加速下载](https://openlist.kipfel.link/vrchat/BOOTH/FaceEmo)
-- ![Booth](/favicons/booth.pm.png) [SOM2 Lens2 相机坐姿](https://booth.pm/ja/items/7622904) - 针对 VirtualLens2 的改造插件。能将相机固定在球壳轨道上，在两点间来回运动并保存位置。球心可固定在腰部、头部等位置。注意：安装后会失去无人机功能，且效果仅本地可见 | [加速下载](https://openlist.kipfel.link/vrchat/BOOTH/SOM2%20Lens2%20%E7%9B%B8%E6%9C%BA%E5%9D%90%E5%A7%BF%E5%85%8D%E8%B4%B9%E7%89%88) | [源站](https://booth.pm/ja/items/7622904)
+- ![VCC](/favicons/vcc.docs.vrchat.com.png) [VRChat Creator Companion (VCC)](https://vrchat.com/download/vcc) - VRChat 官方推荐的 Unity 项目管理工具，用于管理 SDK、包依赖 | [官方下载](https://vrchat.com/download/vcc) | [加速下载](https://openlist.kipfel.link/vrchat/vrcaht%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/VRChat_CreatorCompanion)
+- ![Unity](/favicons/Unity.ico) [Unity 2022.3.22f1](https://unity.com/releases/editor/whats-new/2022.3.22f1) - 推荐使用的 Unity 版本，提示:unity国内网络访问会跳转到cn的域名正确的域名是com，建议使用加速站下载 | [官方页面](https://unity.com/releases/editor/whats-new/2022.3.22f1) | [加速下载](https://OpenList.kipfel.link/vrchat/unity/Unity%202022.3.22f1)
 
 ### 非官方工具
 
-- ![ALCOM](/favicons/vrc-get.anatawa12.com.png) [ALCOM](https://vrc-get.anatawa12.com/zh-hans/alcom/) - VCC 的非官方开源替代工具，更轻量快速
+- ![ALCOM](/favicons/vrc-get.anatawa12.com.png) [ALCOM](https://vrc-get.anatawa12.com/zh-hans/alcom/) - VCC 的非官方开源替代工具，更轻量快速，建议使用 | [官方下载](https://vrc-get.anatawa12.com/zh-hans/alcom/) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/ALCOM/1.1.6)
 
 ### VPM 仓库源
 
-- ![VCC 中文镜像](/favicons/vcc.docs.vrchat.com.png) [VCC 中文镜像](https://vcc.vrczh.org/) - VPM 仓库源的国内镜像，加速下载
+- ![VCC 中文镜像](/favicons/vcc.docs.vrchat.com.png) [VCC 中文镜像](https://vcc.vrczh.org/) - VPM 仓库源的国内镜像,提示:VRChat Creator Companion (不推荐,patcher 现不再维护,请使用 ALCOM)
 
-### 免费资源
+### Unity插件
 
-- ![闲鱼](/favicons/xianyu.png) [小黄鱼｜柠萌小星](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) - 免费的鸡蛋头像 | [闲鱼链接](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) | [加速下载](https://openlist.kipfel.link/vrchat/小黑盒免费鸡蛋/星夜绘梦-闲鱼搜索：柠萌小星) | [原链接](https://17706767472.lanzouo.com/b0xwff2qj)
+- ![GitHub](/favicons/github.com.png) [Modular Avatar](https://modular-avatar.nadena.dev/) - 一键绑骨、骨骼代理、形态键同步、菜单模块、合并动画控制器、合并参数、WD匹配等 | [官网](https://modular-avatar.nadena.dev/) | [GitHub](https://github.com/bdunderscore/modular-avatar) | [VPM加速](https://vpm.vrczh.org/vpm/nadena)
+- ![GitHub](/favicons/github.com.png) [Gesture Manager](https://github.com/BlackStartx/VRC-Gesture-Manager/releases) - 在Unity编辑器中直接预览VRChat轮盘 | [GitHub](https://github.com/BlackStartx/VRC-Gesture-Manager/) | [加速下载 3.9.8](https://openlist.kipfel.link/vrchat/GitHub/Gesture-Manager/3.9.8)
+- ![GitHub](/favicons/github.com.png) [FaceEmo](https://suzuryg.github.io/face-emo/) - 专为 VRChat Avatars 3.0 设计的表情创建与配置工具。常与各类付费/免费的表情套装配合使用 | [官网](https://suzuryg.github.io/face-emo/) | [Booth](https://booth.pm/ja/items/4915091) | [加速下载](https://openlist.kipfel.link/vrchat/BOOTH/FaceEmo)
+- ![Booth](/favicons/booth.pm.png) [SOM2 Lens2 相机坐姿](https://booth.pm/ja/items/7622904) - 针对 VirtualLens2 的改造插件。能将相机固定在球壳轨道上，在两点间来回运动并保存位置。球心可固定在腰部、头部等位置。注意：安装后会失去无人机功能，且效果仅本地可见 | [源站](https://booth.pm/ja/items/7622904) | [加速下载](https://openlist.kipfel.link/vrchat/BOOTH/SOM2%20Lens2%20%E7%9B%B8%E6%9C%BA%E5%9D%90%E5%A7%BF%E5%85%8D%E8%B4%B9%E7%89%88)
 
 ### 着色器
 
@@ -41,6 +37,10 @@ priority: 6
 - ![VRCMods](/favicons/www.vrcmods.com.png) [VRCMods](https://www.vrcmods.com) - 成立于2018年的VRChat社区中心。提供数千个免费的VRChat虚拟形象、3D模型、动画和Unity资源
 - ![Freesound](/favicons/freesound.org.png) [Freesound](https://freesound.org) - 协作式的CC许可音频样本在线数据库。拥有超过40万种声音和音效
 - ![cc0textures](/favicons/cc0textures.com.png) [cc0textures](https://cc0textures.com) - 提供高质量CC0许可（可免费用于商业用途）纹理贴图的网站。资源包含漫反射、法线、粗糙度等贴图。注意：该网站现已更名为 ambientCG
+
+### 社区资源
+
+- ![闲鱼](/favicons/xianyu.png) [小黄鱼｜柠萌小星](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) - 提供的改模合集(在此感谢提供) | [闲鱼链接](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) | [原链接](https://17706767472.lanzouo.com/b0xwff2qj) | [加速下载](https://openlist.kipfel.link/vrchat/小黑盒免费鸡蛋/星夜绘梦-闲鱼搜索：柠萌小星)
 
 ### 改模教程
 

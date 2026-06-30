@@ -28,13 +28,15 @@ export interface NavItem {
 
 /**
  * 导航子分类类型定义
- * 表示一个分类下的子分组
+ * 表示一个分类下的子分组，支持无限嵌套
  */
 export interface NavSubCategory {
   /** 子分类的名称 */
   name: string;
   /** 该子分类下的导航项列表 */
   items: NavItem[];
+  /** 该子分类下的子分类列表（支持无限嵌套） */
+  subCategories: NavSubCategory[];
 }
 
 /**
@@ -46,7 +48,7 @@ export interface NavCategory {
   name: string;
   /** 该分类下的直接导航项列表 */
   items: NavItem[];
-  /** 该分类下的子分类列表 */
+  /** 该分类下的子分类列表（支持无限嵌套） */
   subCategories: NavSubCategory[];
   /** 分类的警告或注意事项列表（可选） */
   notices?: string[];
