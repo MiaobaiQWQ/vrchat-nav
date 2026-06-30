@@ -26,7 +26,7 @@ priority: 5
 - ![AK加速器](/favicons/akspeedy.com.ico) [AK加速器](https://www.akspeedy.com/?ref=itotii) - 提供免费时长，支持全球游戏加速，适合预算有限的用户
 - ![OurPlay](/favicons/ourplay.net.ico) [OurPlay](https://www.ourplay.net/) - 免费加速vrchat,感觉还行
 - ![古怪加速器](/favicons/ggkuai.com.png) [古怪加速器](https://www.ggkuai.com/) - 免费游戏加速器，提供低延迟的游戏加速服务
-- ![中国移动加速器](/favicons/aifast.komect.com.ico) [中国移动加速器](https://aifast.komect.com/home) - 中国移动出品的游戏加速器，五大洲独立顶级机房，畅享国际服，极限加速超稳定低延时 | [官网](https://aifast.komect.com/home)
+- ![中国移动加速器](/favicons/aifast.komect.com.ico) [中国移动加速器](https://aifast.komect.com/home) - 中国移动出品的游戏加速器，五大洲独立顶级机房，畅享国际服，极限加速超稳定低延时
 
 ## 优化
 - ![GitHub](/favicons/github.com.png) [VRChat-FixTool](https://github.com/MLFK-MLFK/VRChat-FixTool) - VRChat 优化工具箱，支持 ReShade，简化高级启动项配置(不清楚是否会被封号) | [GitHub](https://github.com/MLFK-MLFK/VRChat-FixTool) | [哔哩哔哩](https://www.bilibili.com/video/BV16mTu62EG5/) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/VRChat-FixTool)
