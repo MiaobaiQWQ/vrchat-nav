@@ -18,6 +18,7 @@ priority: 5
 ### 免费插件
 - ![OVR Advanced Settings](/favicons/OVR_AdvancedSettings.png) [OVR Advanced Settings 免费版](https://github.com/OpenVR-Advanced-Settings/OpenVR-AdvancedSettings/releases/tag/v5.8.11) - 免费版，功能丰富，可以左右移动 | [GitHub](https://github.com/OpenVR-Advanced-Settings/OpenVR-AdvancedSettings) | [加速下载 5.8.11](https://openlist.kipfel.link/vrchat/GitHub/OVR%20Advanced%20Settings/5.8.11)
 - ![VRCQuestTools](/favicons/kurotu.github.io.png) [VRCQuestTools](https://kurotu.github.io/VRCQuestTools) - Unity编辑器扩展，帮助将PC端Avatar转换为Android (Quest, PICO) 兼容版本。可自动处理纹理生成、删除不支持的组件、简化PhysBones等 | [官网](https://kurotu.github.io/VRCQuestTools) | [Booth](https://kurotu.booth.pm/items/2436054)
+- ![GitHub](/favicons/github.com.png) [OpenVR Space Calibrator](https://github.com/pushrax/OpenVR-SpaceCalibrator) - 帮助你在不同品牌的 VR 追踪设备间配合使用，快速校准多个追踪系统 | [GitHub](https://github.com/pushrax/OpenVR-SpaceCalibrator) | [最新发布](https://github.com/pushrax/OpenVR-SpaceCalibrator/releases) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/OpenVR-SpaceCalibrator)
 
 
 ## 加速器
@@ -25,6 +26,7 @@ priority: 5
 - ![AK加速器](/favicons/akspeedy.com.ico) [AK加速器](https://www.akspeedy.com/?ref=itotii) - 提供免费时长，支持全球游戏加速，适合预算有限的用户
 - ![OurPlay](/favicons/ourplay.net.ico) [OurPlay](https://www.ourplay.net/) - 免费加速vrchat,感觉还行
 - ![古怪加速器](/favicons/ggkuai.com.png) [古怪加速器](https://www.ggkuai.com/) - 免费游戏加速器，提供低延迟的游戏加速服务
+- ![中国移动加速器](/favicons/aifast.komect.com.ico) [中国移动加速器](https://aifast.komect.com/home) - 中国移动出品的游戏加速器，五大洲独立顶级机房，畅享国际服，极限加速超稳定低延时 | [官网](https://aifast.komect.com/home)
 
 ## 优化
 - ![GitHub](/favicons/github.com.png) [VRChat-FixTool](https://github.com/MLFK-MLFK/VRChat-FixTool) - VRChat 优化工具箱，支持 ReShade，简化高级启动项配置(不清楚是否会被封号) | [GitHub](https://github.com/MLFK-MLFK/VRChat-FixTool) | [哔哩哔哩](https://www.bilibili.com/video/BV16mTu62EG5/) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/VRChat-FixTool)
