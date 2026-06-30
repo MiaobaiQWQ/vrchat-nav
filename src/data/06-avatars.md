@@ -18,14 +18,14 @@ priority: 6
 
 ### Unity插件
 
-- ![GitHub](/favicons/github.com.png) [Modular Avatar](https://modular-avatar.nadena.dev/) - 一键绑骨、骨骼代理、形态键同步、菜单模块、合并动画控制器、合并参数、WD匹配等 | [官网](https://modular-avatar.nadena.dev/) | [GitHub](https://github.com/bdunderscore/modular-avatar) | [VPM加速](https://vpm.vrczh.org/vpm/nadena)
+- ![GitHub](/favicons/github.com.png) [Modular Avatar](https://modular-avatar.nadena.dev/) - 一键绑骨、骨骼代理、形态键同步、菜单模块、合并动画控制器、合并参数、WD匹配等 | [官网](https://modular-avatar.nadena.dev/) | [GitHub](https://github.com/bdunderscore/modular-avatar) | [VPM加速](https://vpm.vrczh.org/vpm/nadena) | [加速下载](https://openlist.kipfel.link/vrchat/%E6%A8%A1%E5%9E%8B%E6%8F%92%E4%BB%B6/Modular%20Avatar)
 - ![GitHub](/favicons/github.com.png) [Gesture Manager](https://github.com/BlackStartx/VRC-Gesture-Manager/releases) - 在Unity编辑器中直接预览VRChat轮盘 | [GitHub](https://github.com/BlackStartx/VRC-Gesture-Manager/) | [加速下载 3.9.8](https://openlist.kipfel.link/vrchat/GitHub/Gesture-Manager/3.9.8)
 - ![GitHub](/favicons/github.com.png) [FaceEmo](https://suzuryg.github.io/face-emo/) - 专为 VRChat Avatars 3.0 设计的表情创建与配置工具。常与各类付费/免费的表情套装配合使用 | [官网](https://suzuryg.github.io/face-emo/) | [Booth](https://booth.pm/ja/items/4915091) | [加速下载](https://openlist.kipfel.link/vrchat/BOOTH/FaceEmo)
 - ![Booth](/favicons/booth.pm.png) [SOM2 Lens2 相机坐姿](https://booth.pm/ja/items/7622904) - 针对 VirtualLens2 的改造插件。能将相机固定在球壳轨道上，在两点间来回运动并保存位置。球心可固定在腰部、头部等位置。注意：安装后会失去无人机功能，且效果仅本地可见 | [源站](https://booth.pm/ja/items/7622904) | [加速下载](https://openlist.kipfel.link/vrchat/BOOTH/SOM2%20Lens2%20%E7%9B%B8%E6%9C%BA%E5%9D%90%E5%A7%BF%E5%85%8D%E8%B4%B9%E7%89%88)
 
 ### 着色器
 
-- ![lilToon](/favicons/booth.pm.png) [lilToon](https://lilxyzw.booth.pm/items/3087170) - VRChat中十分常见的日系风格着色器。具有一键预设、可保存自定义配置等特点，能实现动画/插画风格的渲染效果 | [Booth](https://lilxyzw.booth.pm/items/3087170) | [GitHub](https://github.com/lilxyzw/lilToon) | [VPM加速](https://vpm.vrczh.org/vpm/lilxyzw)
+- ![lilToon](/favicons/booth.pm.png) [lilToon](https://lilxyzw.booth.pm/items/3087170) - VRChat中十分常见的日系风格着色器。具有一键预设、可保存自定义配置等特点，能实现动画/插画风格的渲染效果 | [Booth](https://lilxyzw.booth.pm/items/3087170) | [GitHub](https://github.com/lilxyzw/lilToon) | [VPM加速](https://vpm.vrczh.org/vpm/lilxyzw) | [加速下载](https://openlist.kipfel.link/vrchat/%E7%9D%80%E8%89%B2%E5%99%A8/lilToon)
 - ![Poiyomi](/favicons/www.poiyomi.com.png) [Poiyomi Shaders](https://www.poiyomi.com) - 功能强大且通用的免费开源着色器，专为VRChat定制。提供多种着色模式和高级光照处理 | [官网](https://www.poiyomi.com) | [GitHub](https://github.com/poiyomi/PoiyomiToonShader)
 - ![GitLab](/favicons/gitlab.com.png) [Silent Cel Shading Shader (SCSS)](https://gitlab.com/s-ilent/SCSS) - 提供高质量的赛璐珞风格（Cel Shading）渲染。支持多种混合模式和Matcap，可在世界空间或切线空间锚定
 - ![Shaderforge](/favicons/beta.jinxxy.com.ico) [Shaderforge](https://beta.jinxxy.com) - 可视化的节点式着色器编辑器，可在Unity中通过连连看方式创建着色器，无需编写代码
@@ -45,6 +45,7 @@ priority: 6
 ### 改模教程
 
 - ![VRLearn](/favicons/VRLearn.png) [VRLearn](https://start.gamemode1.com/) - 改模入门教程 | [VRLearn](https://start.gamemode1.com/) | [哔哩哔哩](https://space.bilibili.com/2796549)
+- ![哔哩哔哩](/favicons/xiaoheihe.cn.png) [合集·牢云的VRC改模教程系列（更新中）](https://b23.tv/oAOcear) - 牢云的VRC改模教程系列 | [哔哩哔哩](https://b23.tv/oAOcear) | [配套插件下载](https://openlist.kipfel.link/vrchat/%E6%94%B9%E6%A8%A1%E6%95%99%E7%A8%8B/%E7%89%A2%E4%BA%91%E7%9A%84VRC%E6%94%B9%E6%A8%A1%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6)
 
 ---
 
