@@ -1,25 +1,34 @@
 import { useEffect, useState, useRef } from 'react';
 
-/**
- * 粒子数据类型
- */
 interface Particle {
-  x: number;           // 粒子 x 坐标
-  y: number;           // 粒子 y 坐标
-  size: number;        // 粒子大小
-  speedY: number;      // y 轴移动速度
-  speedX: number;      // x 轴移动速度
-  opacity: number;     // 透明度
-  color: string;       // 颜色
+  x: number;
+  y: number;
+  size: number;
+  speedY: number;
+  speedX: number;
+  opacity: number;
+  color: string;
 }
 
-/**
- * 启动画面组件
- * 展示带有粒子动画的启动画面
- * @param onComplete - 动画完成后的回调函数
- */
+interface LoadingItem {
+  text: string;
+  duration: number;
+}
+
+const loadingItems: LoadingItem[] = [
+  { text: '初始化导航系统...', duration: 600 },
+  { text: '加载官方文档...', duration: 400 },
+  { text: '获取社区资源...', duration: 450 },
+  { text: '加载开发工具...', duration: 350 },
+  { text: '准备改模教程...', duration: 500 },
+  { text: '渲染界面组件...', duration: 400 },
+  { text: '准备就绪！', duration: 300 }
+];
+
 export default function SplashScreen({ onComplete }: { onComplete: () => void }) {
-  const [phase, setPhase] = useState<'particles' | 'logo' | 'fadeout'>('particles');
+  const [phase, setPhase] = useState<'particles' | 'logo' | 'loading' | 'fadeout'>('particles');
+  const [currentLoadingIndex, setCurrentLoadingIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const rafRef = useRef<number>(0);
@@ -30,9 +39,6 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    /**
-     * 调整画布大小以适应窗口
-     */
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -40,10 +46,8 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
     resize();
     window.addEventListener('resize', resize);
 
-    // 粒子颜色数组
     const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a'];
 
-    // 创建粒子
     const particles: Particle[] = [];
     for (let i = 0; i < 80; i++) {
       particles.push({
@@ -58,20 +62,15 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
     }
     particlesRef.current = particles;
 
-    /**
-     * 粒子动画循环
-     */
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (const p of particlesRef.current) {
-        // 更新粒子位置
         p.y += p.speedY;
         p.x += p.speedX;
         p.opacity += (Math.random() - 0.5) * 0.02;
         p.opacity = Math.max(0.1, Math.min(0.8, p.opacity));
 
-        // 边界检测与循环
         if (p.y < -10) {
           p.y = canvas.height + 10;
           p.x = Math.random() * canvas.width;
@@ -79,14 +78,12 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
 
-        // 绘制粒子核心
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.globalAlpha = p.opacity;
         ctx.fill();
 
-        // 绘制粒子发光效果
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
         const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3);
@@ -102,21 +99,34 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
     };
     rafRef.current = requestAnimationFrame(animate);
 
-    // 阶段定时器：显示 logo
     const logoTimer = setTimeout(() => setPhase('logo'), 400);
-    // 阶段定时器：开始淡出
-    const fadeTimer = setTimeout(() => setPhase('fadeout'), 2200);
-    // 阶段定时器：完成并回调
+
+    const startLoadingTimer = setTimeout(() => {
+      setPhase('loading');
+
+      let index = 0;
+      const loadNext = () => {
+        if (index < loadingItems.length) {
+          setCurrentLoadingIndex(index);
+          setProgress(((index + 1) / loadingItems.length) * 100);
+          index++;
+          setTimeout(loadNext, loadingItems[index - 1].duration);
+        } else {
+          setTimeout(() => setPhase('fadeout'), 500);
+        }
+      };
+      loadNext();
+    }, 1200);
+
     const completeTimer = setTimeout(() => {
       cancelAnimationFrame(rafRef.current);
       onComplete();
-    }, 3000);
+    }, 1200 + loadingItems.reduce((sum, item) => sum + item.duration, 0) + 1000);
 
-    // 清理函数
     return () => {
       cancelAnimationFrame(rafRef.current);
       clearTimeout(logoTimer);
-      clearTimeout(fadeTimer);
+      clearTimeout(startLoadingTimer);
       clearTimeout(completeTimer);
       window.removeEventListener('resize', resize);
     };
@@ -124,18 +134,23 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
 
   return (
     <div className={`splash-screen ${phase === 'fadeout' ? 'splash-fadeout' : ''}`}>
-      {/* 粒子动画画布 */}
       <canvas ref={canvasRef} className="splash-canvas" />
-      {/* Logo 和文字内容 */}
-      <div className={`splash-content ${phase === 'logo' || phase === 'fadeout' ? 'splash-content-visible' : ''}`}>
+      <div className={`splash-content ${phase === 'logo' || phase === 'loading' || phase === 'fadeout' ? 'splash-content-visible' : ''}`}>
         <div className="splash-logo">
           <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
           </svg>
         </div>
         <h1 className="splash-title">VRChat 导航站</h1>
-        <div className="splash-loader">
-          <div className="splash-loader-bar" />
+
+        <div className={`splash-loading-info ${phase === 'loading' || phase === 'fadeout' ? 'splash-loading-info-visible' : ''}`}>
+          <div className="splash-loading-text">
+            {loadingItems[currentLoadingIndex]?.text || ''}
+          </div>
+          <div className="splash-loader">
+            <div className="splash-loader-bar" style={{ width: `${progress}%` }} />
+          </div>
+          <div className="splash-progress-text">{Math.round(progress)}%</div>
         </div>
       </div>
     </div>
