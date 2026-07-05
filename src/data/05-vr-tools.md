@@ -34,6 +34,9 @@ priority: 5
 - ![古怪加速器](/favicons/ggkuai.com.png) [古怪加速器](https://www.ggkuai.com/) - 免费游戏加速器，提供低延迟的游戏加速服务
 - ![中国移动加速器](/favicons/aifast.komect.com.ico) [中国移动加速器](https://aifast.komect.com/home) - 中国移动出品的游戏加速器，五大洲独立顶级机房，畅享国际服，极限加速超稳定低延时
 
+## 动作驱动工具
+- ![GitHub](/favicons/github.com.png) [AnyaDance](https://github.com/anyapipira/AnyaDance) - 用于驱动与制作 VRChat 虚拟形象全身动作的 Windows 工具集，支持手动摆姿势、实时驱动、播放 MMD 舞蹈，核心是 SteamVR/OpenVR 虚拟设备驱动 | [GitHub](https://github.com/anyapipira/AnyaDance) | [中文教程](https://github.com/anyapipira/AnyaDance/blob/main/README.zh-CN.md) | [英文教程](https://github.com/anyapipira/AnyaDance/blob/main/README.md) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/AnyaDance)
+
 ## 优化工具
 - ![GitHub](/favicons/github.com.png) [VRChat-FixTool](https://github.com/MLFK-MLFK/VRChat-FixTool) - VRChat 优化工具箱，支持 ReShade，简化高级启动项配置(不清楚是否会被封号) | [GitHub](https://github.com/MLFK-MLFK/VRChat-FixTool) | [哔哩哔哩](https://www.bilibili.com/video/BV16mTu62EG5/) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/VRChat-FixTool)
 
