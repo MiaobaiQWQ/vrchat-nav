@@ -1,14 +1,14 @@
 ---
 name: VRChat 常见模型
-priority: 7
+priority: 8
 ---
 
 ## 常见模型
 
-- ![まめひなた](/booth/mamehinata.jpg) [まめひなた (豆日向) Mamehinata](https://booth.pm/ja/items/4340548) - 可爱犬系女孩
-- ![キプフェル](/booth/kipfel.jpg) [キプフェル (基普费尔) Kipfel](https://booth.pm/ja/items/5813187) - 慵懒猫系女孩
+- ![まめひなた](/booth/mamehinata.jpg) [まめひなた (豆日向) Mamehinata](https://booth.pm/ja/items/4340548) - 可爱犬系?孩(我们都喜欢叫他狗狗)
+- ![キプフェル](/booth/kipfel.jpg) [キプフェル (基普费尔) Kipfel](https://booth.pm/ja/items/5813187) - 慵懒猫系?孩((基普费尔)虽然机翻是这个但我们喜欢叫他猫猫)
 - ![うささき](/booth/usasaki.jpg) [うささき (兔咲) Usasaki](https://booth.pm/ja/items/3550881) - 垂耳兔系女孩
-- ![こぐまのルウ](/booth/koguma.jpg) [こぐまのルウ (小熊露乌) Koguma no Ruu](https://booth.pm/ja/items/3117795) - 小熊系女孩
+- ![こぐまのルウ](/booth/Koguma no Ruu.jpg) [こぐまのルウ (小熊露乌) Koguma no Ruu](https://booth.pm/ja/items/3117795) - 小熊系女孩
 - ![みなほし](/booth/minahoshi.jpg) [みなほし (美星) Minahoshi](https://booth.pm/ja/items/2693309) - 星空系女孩
 - ![すずはな](/booth/suzuhana.jpg) [すずはな (铃花) Suzuhana](https://booth.pm/ja/items/2408707) - 铃花系女孩
 - ![みつまめ](/booth/mitsumame.jpg) [みつまめ (三豆) Mitsumame](https://booth.pm/ja/items/5748454) - 三豆系女孩
