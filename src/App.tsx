@@ -7,7 +7,7 @@ import './App.css';
 
 const mdModules = import.meta.glob('/src/data/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 
-function NavCard({ item }: { item: NavItem }) {
+function NavCard({ item, onImageClick }: { item: NavItem; onImageClick?: (url: string, title: string) => void }) {
   const [imgError, setImgError] = useState(false);
   const faviconUrl = getDomainFavicon(item.url);
   const iconUrl = item.icon || faviconUrl;
@@ -26,6 +26,13 @@ function NavCard({ item }: { item: NavItem }) {
               alt={item.title}
               onError={() => setImgError(true)}
               className="nav-card-img"
+              onClick={(e) => {
+                if (onImageClick) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onImageClick(iconUrl, item.title);
+                }
+              }}
             />
           ) : (
             <Bookmark className="nav-card-fallback" />
@@ -141,11 +148,13 @@ function SidebarSubCategoryItem({
 function SubCategorySection({
   sub,
   searchTerm,
-  subcategoryId
+  subcategoryId,
+  onImageClick
 }: {
   sub: NavSubCategory;
   searchTerm: string;
   subcategoryId: string;
+  onImageClick?: (url: string, title: string) => void;
 }) {
   const filteredItems = useMemo(() => {
     if (!searchTerm.trim()) return sub.items;
@@ -173,7 +182,7 @@ function SubCategorySection({
       {filteredItems.length > 0 && (
         <div className="nav-grid">
           {filteredItems.map((item, idx) => (
-            <NavCard key={`${item.url}-${idx}`} item={item} />
+            <NavCard key={`${item.url}-${idx}`} item={item} onImageClick={onImageClick} />
           ))}
         </div>
       )}
@@ -183,6 +192,7 @@ function SubCategorySection({
           sub={childSub}
           searchTerm={searchTerm}
           subcategoryId={`${subcategoryId}-child-${idx}`}
+          onImageClick={onImageClick}
         />
       ))}
     </div>
@@ -192,11 +202,13 @@ function SubCategorySection({
 function CategorySection({
   category,
   searchTerm,
-  categoryId
+  categoryId,
+  onImageClick
 }: {
   category: NavCategory;
   searchTerm: string;
   categoryId: string;
+  onImageClick?: (url: string, title: string) => void;
 }) {
   const directItems = useMemo(() => {
     if (!searchTerm.trim()) return category.items;
@@ -237,7 +249,7 @@ function CategorySection({
       {directItems.length > 0 && (
         <div className="nav-grid" style={{ marginBottom: category.subCategories.length > 0 ? 20 : 0 }}>
           {directItems.map((item, idx) => (
-            <NavCard key={`${item.url}-${idx}`} item={item} />
+            <NavCard key={`${item.url}-${idx}`} item={item} onImageClick={onImageClick} />
           ))}
         </div>
       )}
@@ -247,6 +259,7 @@ function CategorySection({
           sub={sub}
           searchTerm={searchTerm}
           subcategoryId={`${categoryId}-sub-${idx}`}
+          onImageClick={onImageClick}
         />
       ))}
     </section>
@@ -283,6 +296,8 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
   const [contentVisible, setContentVisible] = useState(false);
+  const [modalImage, setModalImage] = useState<string | null>(null);
+  const [modalTitle, setModalTitle] = useState<string>('');
 
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
@@ -371,6 +386,16 @@ export default function App() {
     });
   };
 
+  const handleImageClick = (url: string, title: string) => {
+    setModalImage(url);
+    setModalTitle(title);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+    setModalTitle('');
+  };
+
   const scrollToDisclaimer = () => {
     const el = document.getElementById('disclaimer-section');
     const detailsEl = el?.querySelector('details');
@@ -399,6 +424,24 @@ export default function App() {
   return (
     <div className={`app ${contentVisible ? 'app-visible' : ''}`}>
       {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
+      
+      {/* 图片弹窗 */}
+      {modalImage && (
+        <div className="image-modal" onClick={closeModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="image-modal-close" onClick={closeModal}>
+              <X size={24} />
+            </button>
+            <div className="image-modal-header">
+              <h3 className="image-modal-title">{modalTitle}</h3>
+            </div>
+            <div className="image-modal-image-container">
+              <img src={modalImage} alt={modalTitle} className="image-modal-image" />
+            </div>
+          </div>
+        </div>
+      )}
+      
       <aside className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''} ${contentVisible ? 'sidebar-visible' : ''}`}>
         <div className="sidebar-header">
           <div className="sidebar-logo">
@@ -503,6 +546,7 @@ export default function App() {
                 category={cat}
                 searchTerm={searchTerm}
                 categoryId={`cat-${idx}`}
+                onImageClick={handleImageClick}
               />
             ))
           )}

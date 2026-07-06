@@ -1,6 +1,6 @@
 ---
 name: 解压工具
-priority: 7
+priority: 8
 ---
 
 - ![7-Zip](/favicons/7-zip.org.ico) [7-Zip](https://7-zip.org/download.html) - 压缩率极高且免费，但界面简陋 | [官方下载](https://7-zip.org/download.html) | [加速下载](https://openlist.kipfel.link/vrchat/%E8%A7%A3%E5%8E%8B%E8%BD%AF%E4%BB%B6/7-Zip)
