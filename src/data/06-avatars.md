@@ -18,6 +18,12 @@ priority: 6
 
 - ![VCC 中文镜像](/favicons/vcc.docs.vrchat.com.png) [VCC 中文镜像](https://vcc.vrczh.org/) - VPM 仓库源的国内镜像,提示:VRChat Creator Companion (不推荐,patcher 现不再维护,请使用 ALCOM)
 
+## Blender插件
+
+### 模型优化
+
+- ![GitHub](/favicons/github.com.png) [Cats Blender Plugin](https://github.com/absolute-quantum/cats-blender-plugin) - VRChat模型优化的神器。支持MMD/XNALara/Mixamo等多种格式一键导入；自动修复骨骼、权重、材质；智能减面（保留形态键）；创建眼动追踪和口型同步；生成纹理图集；Quest兼容版本生成。内置mmd_tools，无需额外安装 | [GitHub](https://github.com/absolute-quantum/cats-blender-plugin) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/Cats%20Blender%20Plugin)
+
 ## Unity插件
 
 ### 改模辅助
