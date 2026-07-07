@@ -90,11 +90,13 @@ priority: 6
 - ![Freesound](/favicons/freesound.org.png) [Freesound](https://freesound.org) - 协作式的CC许可音频样本在线数据库。拥有超过40万种声音和音效
 - ![cc0textures](/favicons/cc0textures.com.png) [cc0textures](https://cc0textures.com) - 提供高质量CC0许可（可免费用于商业用途）纹理贴图的网站。资源包含漫反射、法线、粗糙度等贴图。注意：该网站现已更名为 ambientCG
 
-## 社区资源
+## 二开资源
 
-### 资源合集
+### 闲鱼的二开工程文件
 
-- ![闲鱼](/favicons/xianyu.png) [小黄鱼｜柠萌小星](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) - 提供的改模合集(在此感谢提供) | [闲鱼链接](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) | [原链接](https://17706767472.lanzouo.com/b0xwff2qj) | [加速下载](https://openlist.kipfel.link/vrchat/小黑盒免费鸡蛋/星夜绘梦-闲鱼搜索：柠萌小星)
+> ⚠️ **警告**：本站仅提供作者授权的二开工程文件，工程文件内包含的模型素体及贴图，付费插件等内容均不提供加速下载，请前往对应的 Booth 进行获取。
+
+- ![闲鱼](/favicons/xianyu.png) [小黄鱼｜柠萌小星](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) - 仅提供作者的二开工程文件(在此感谢提供) | [闲鱼链接](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) | [原链接](https://17706767472.lanzouo.com/b0xwff2qj) | [加速下载](https://openlist.kipfel.link/vrchat/免费二开工程文件/星夜绘梦-闲鱼搜索：柠萌小星)
 
 ## 改模教程
 
