@@ -308,7 +308,7 @@ export default function App() {
   
   const [currentPsIndex, setCurrentPsIndex] = useState(0);
   const [psTransitioning, setPsTransitioning] = useState(false);
-  const psIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const psIntervalRef = useRef<number | null>(null);
 
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
