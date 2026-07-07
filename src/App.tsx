@@ -303,12 +303,104 @@ export default function App() {
     '点击图标可以放大哦',
     '开发团队看似是3人实际2人！！！',
     '欢迎反馈onedrive@kipfel.cn',
-    '不知道写什么啦'
+    '不知道写什么啦',
+    '啦啦啦啦啦！！！！'
   ];
   
   const [currentPsIndex, setCurrentPsIndex] = useState(0);
   const [psTransitioning, setPsTransitioning] = useState(false);
   const psIntervalRef = useRef<number | null>(null);
+
+  // 预加载图片函数
+  const preloadImage = useCallback((src: string): Promise<void> => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve();
+      img.onerror = () => resolve();
+      img.src = src;
+    });
+  }, []);
+
+  // 从分类数据中提取所有需要预加载的图标路径
+  const collectFaviconPaths = useCallback((cats: NavCategory[]): string[] => {
+    const paths: Set<string> = new Set();
+    
+    const processItems = (items: NavItem[]) => {
+      items.forEach(item => {
+        if (item.icon) {
+          paths.add(item.icon);
+        }
+      });
+    };
+
+    const processSubCategories = (subs: NavSubCategory[]) => {
+      subs.forEach(sub => {
+        processItems(sub.items);
+        processSubCategories(sub.subCategories);
+      });
+    };
+
+    cats.forEach(cat => {
+      processItems(cat.items);
+      processSubCategories(cat.subCategories);
+    });
+
+    return Array.from(paths);
+  }, []);
+
+  // 构建加载任务
+  const loadingTasks = useMemo(() => {
+    let parsedCategories: NavCategory[] = [];
+
+    return [
+      {
+        text: '初始化导航系统...',
+        task: async () => {
+          // 稍微等待，确保渲染正常
+          await new Promise(resolve => setTimeout(resolve, 100));
+        }
+      },
+      {
+        text: '加载官方文档...',
+        task: async () => {
+          // 解析并加载 Markdown 数据
+          try {
+            const parsedFiles = Object.entries(mdModules)
+              .map(([filePath, content]) => 
+                parseMarkdownFile(content as string, filePath.split('/').pop()?.replace('.md', '') || '未知')
+              )
+              .sort((a, b) => a.priority - b.priority);
+            parsedCategories = parsedFiles.map(f => f.category);
+            setCategories(parsedCategories);
+          } catch (e) {
+            console.error('数据加载失败:', e);
+          }
+        }
+      },
+      {
+        text: '预加载图标资源...',
+        task: async () => {
+          const iconPaths = collectFaviconPaths(parsedCategories);
+          // 预加载前 15 个图标，避免太多太卡
+          const iconsToPreload = iconPaths.slice(0, 15);
+          await Promise.all(iconsToPreload.map(preloadImage));
+        }
+      },
+      {
+        text: '准备改模教程...',
+        task: async () => {
+          // 简单的等待，让用户能看到这个阶段
+          await new Promise(resolve => setTimeout(resolve, 200));
+        }
+      },
+      {
+        text: '准备就绪！',
+        task: async () => {
+          setLoading(false);
+        }
+      }
+    ];
+  }, [preloadImage, collectFaviconPaths]);
 
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
@@ -322,21 +414,6 @@ export default function App() {
   const handleSplashComplete = useCallback(() => {
     setShowSplash(false);
     setTimeout(() => setContentVisible(true), 50);
-  }, []);
-
-  useEffect(() => {
-    try {
-      const parsedFiles = Object.entries(mdModules)
-        .map(([filePath, content]) => 
-          parseMarkdownFile(content as string, filePath.split('/').pop()?.replace('.md', '') || '未知')
-        )
-        .sort((a, b) => a.priority - b.priority);
-
-      setCategories(parsedFiles.map(f => f.category));
-      setLoading(false);
-    } catch {
-      setLoading(false);
-    }
   }, []);
 
   useEffect(() => {
@@ -436,7 +513,7 @@ export default function App() {
   }, [psContent.length]);
 
   if (showSplash) {
-    return <SplashScreen onComplete={handleSplashComplete} />;
+    return <SplashScreen onComplete={handleSplashComplete} loadingTasks={loadingTasks} />;
   }
 
   if (loading) {

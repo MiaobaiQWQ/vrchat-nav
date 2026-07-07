@@ -10,22 +10,18 @@ interface Particle {
   color: string;
 }
 
-interface LoadingItem {
+interface LoadingTask {
   text: string;
-  duration: number;
+  task: () => Promise<void>;
 }
 
-const loadingItems: LoadingItem[] = [
-  { text: '初始化导航系统...', duration: 600 },
-  { text: '加载官方文档...', duration: 400 },
-  { text: '获取社区资源...', duration: 450 },
-  { text: '加载开发工具...', duration: 350 },
-  { text: '准备改模教程...', duration: 500 },
-  { text: '渲染界面组件...', duration: 400 },
-  { text: '准备就绪！', duration: 300 }
-];
-
-export default function SplashScreen({ onComplete }: { onComplete: () => void }) {
+export default function SplashScreen({ 
+  onComplete, 
+  loadingTasks 
+}: { 
+  onComplete: () => void;
+  loadingTasks: LoadingTask[];
+}) {
   const [phase, setPhase] = useState<'particles' | 'logo' | 'loading' | 'fadeout'>('particles');
   const [currentLoadingIndex, setCurrentLoadingIndex] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -105,12 +101,19 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
       setPhase('loading');
 
       let index = 0;
-      const loadNext = () => {
-        if (index < loadingItems.length) {
+      const loadNext = async () => {
+        if (index < loadingTasks.length) {
           setCurrentLoadingIndex(index);
-          setProgress(((index + 1) / loadingItems.length) * 100);
+          setProgress(((index + 1) / loadingTasks.length) * 100);
+          
+          try {
+            await loadingTasks[index].task();
+          } catch (e) {
+            console.error('加载任务失败:', e);
+          }
+          
           index++;
-          setTimeout(loadNext, loadingItems[index - 1].duration);
+          setTimeout(loadNext, 100);
         } else {
           setTimeout(() => setPhase('fadeout'), 500);
         }
@@ -121,7 +124,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
     const completeTimer = setTimeout(() => {
       cancelAnimationFrame(rafRef.current);
       onComplete();
-    }, 1200 + loadingItems.reduce((sum, item) => sum + item.duration, 0) + 1000);
+    }, 1200 + loadingTasks.length * 300 + 1000);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
@@ -130,7 +133,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
       clearTimeout(completeTimer);
       window.removeEventListener('resize', resize);
     };
-  }, [onComplete]);
+  }, [onComplete, loadingTasks]);
 
   return (
     <div className={`splash-screen ${phase === 'fadeout' ? 'splash-fadeout' : ''}`}>
@@ -145,7 +148,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
 
         <div className={`splash-loading-info ${phase === 'loading' || phase === 'fadeout' ? 'splash-loading-info-visible' : ''}`}>
           <div className="splash-loading-text">
-            {loadingItems[currentLoadingIndex]?.text || ''}
+            {loadingTasks[currentLoadingIndex]?.text || ''}
           </div>
           <div className="splash-loader">
             <div className="splash-loader-bar" style={{ width: `${progress}%` }} />
