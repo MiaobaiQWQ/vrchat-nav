@@ -304,7 +304,8 @@ export default function App() {
     '开发团队看似是3人实际2人！！！',
     '欢迎反馈onedrive@kipfel.cn',
     '不知道写什么啦',
-    '啦啦啦啦啦！！！！'
+    '啦啦啦啦啦！！！！',
+    '猫猫可爱！！！'
   ];
   
   const [currentPsIndex, setCurrentPsIndex] = useState(0);
