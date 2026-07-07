@@ -7,7 +7,7 @@ priority: 6
 
 ### Unity 开发环境
 
-- ![Unity](/favicons/Unity.ico) [Unity 2022.3.22f1](https://unity.com/releases/editor/whats-new/2022.3.22f1) - 推荐使用的 Unity 版本，提示:unity国内网络访问会跳转到cn的域名正确的域名是com，建议使用加速站下载 | [官方页面](https://unity.com/releases/editor/whats-new/2022.3.22f1) | [加速下载](https://OpenList.kipfel.link/vrchat/unity/Unity%202022.3.22f1)
+- ![Unity](/favicons/Unity.ico) [Unity 2022.3.22f1](https://unity.com/releases/editor/whats-new/2022.3.22f1) - 推荐使用的 Unity 版本，提示:unity国内网络访问会跳转到cn的域名正确的域名是com，建议使用加速站下载 | [官方页面](https://unity.com/releases/editor/whats-new/2022.3.22f1) | [加速下载](https://openlist.kipfel.link/vrchat/unity/UnitySetup64-2022.3.22f1)
 - ![VCC](/favicons/vcc.docs.vrchat.com.png) [VRChat Creator Companion (VCC)](https://vrchat.com/download/vcc) - VRChat 官方推荐的 Unity 项目管理工具，用于管理 SDK、包依赖 | [官方下载](https://vrchat.com/download/vcc) | [加速下载](https://openlist.kipfel.link/vrchat/vrcaht%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/VRChat_CreatorCompanion)
 - ![ALCOM](/favicons/vrc-get.anatawa12.com.png) [ALCOM](https://vrc-get.anatawa12.com/zh-hans/alcom/) - VCC 的非官方开源替代工具，更轻量快速，建议使用 | [官方下载](https://vrc-get.anatawa12.com/zh-hans/alcom/) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/ALCOM/1.1.6)
 
