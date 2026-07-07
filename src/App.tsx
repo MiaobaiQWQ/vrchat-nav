@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Search, Bookmark, Sun, Moon, Hash, ChevronRight, X, LayoutGrid, Menu, FolderOpen, Globe, BookOpen, Users, Code, Gamepad2, User } from 'lucide-react';
 import { parseMarkdownFile, getDomainFavicon } from '@/utils/mdParser';
 import SplashScreen from '@/components/SplashScreen';
@@ -298,6 +298,17 @@ export default function App() {
   const [contentVisible, setContentVisible] = useState(false);
   const [modalImage, setModalImage] = useState<string | null>(null);
   const [modalTitle, setModalTitle] = useState<string>('');
+  
+  const psContent = [
+    '点击图标可以放大哦',
+    '开发团队看似是3人实际2人！！！',
+    '欢迎反馈onedrive@kipfel.cn',
+    '不知道写什么啦'
+  ];
+  
+  const [currentPsIndex, setCurrentPsIndex] = useState(0);
+  const [psTransitioning, setPsTransitioning] = useState(false);
+  const psIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
@@ -407,6 +418,22 @@ export default function App() {
       setSidebarOpen(false);
     }
   };
+  
+  useEffect(() => {
+    psIntervalRef.current = setInterval(() => {
+      setPsTransitioning(true);
+      setTimeout(() => {
+        setCurrentPsIndex((prev) => (prev + 1) % psContent.length);
+        setPsTransitioning(false);
+      }, 300);
+    }, 3000);
+    
+    return () => {
+      if (psIntervalRef.current) {
+        clearInterval(psIntervalRef.current);
+      }
+    };
+  }, [psContent.length]);
 
   if (showSplash) {
     return <SplashScreen onComplete={handleSplashComplete} />;
@@ -496,6 +523,14 @@ export default function App() {
           })}
         </nav>
         <div className="sidebar-footer">
+          <div className="ps-container ps-footer">
+            <div className="ps-wrapper">
+              <span className="ps-label">PS:</span>
+              <span className={`ps-text ${psTransitioning ? 'ps-transitioning' : ''}`}>
+                {psContent[currentPsIndex]}
+              </span>
+            </div>
+          </div>
           <button className="theme-toggle" onClick={toggleTheme}>
             {theme === 'light' ? <Moon className="theme-toggle-icon" /> : <Sun className="theme-toggle-icon" />}
             <span>{theme === 'light' ? '深色模式' : '浅色模式'}</span>
@@ -622,6 +657,7 @@ export default function App() {
               </div>
             </details>
           </div>
+          
           <footer className="footer">
             <div className="footer-content">
               <p className="footer-email">
