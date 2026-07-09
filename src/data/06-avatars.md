@@ -47,6 +47,8 @@ priority: 6
 ### 图层与参数管理
 
 - ![GitHub](/favicons/github.com.png) [Avatar Manager](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) - 图层合并与参数同步，管理Avatar 3.0的FX层和参数 | [GitHub](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/Avatar%20Manager)
+- ![GitHub](/favicons/github.com.png) [MA2BT Pro](https://github.com/zhuozhi233/MA2BT-Pro) - 保留原版 MA2BT 核心思路的增强版本，在此基础上增加了一些面向复杂 Avatar 项目的扩展功能和保护逻辑 | [GitHub](https://github.com/zhuozhi233/MA2BT-Pro) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/MA2BT%20Pro(%E6%89%A9%E5%B1%95))
+- ![GitHub](/favicons/github.com.png) [MA2BT](https://github.com/Null-K/MA2BT) - 简洁、轻量的工具，主要用于将 Modular Avatar 生成的响应式图层转换为 BlendTree | [GitHub](https://github.com/Null-K/MA2BT) | [中文文档](https://github.com/Null-K/MA2BT/blob/main/README.md) | [英文文档](https://github.com/Null-K/MA2BT/blob/main/README_EN.md) | [日文文档](https://github.com/Null-K/MA2BT/blob/main/README_JP.md) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/MA2BT(%E5%8E%9F%E7%89%88))
 
 ### 表情与交互
 
