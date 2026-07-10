@@ -8,6 +8,7 @@ priority: 6
 ### Unity 开发环境
 
 - ![Unity](/favicons/Unity.ico) [Unity 2022.3.22f1](https://unity.com/releases/editor/whats-new/2022.3.22f1) - 推荐使用的 Unity 版本，提示:unity国内网络访问会跳转到cn的域名正确的域名是com，建议使用加速站下载 | [官方页面](https://unity.com/releases/editor/whats-new/2022.3.22f1) | [加速下载](https://openlist.kipfel.link/vrchat/unity/UnitySetup64-2022.3.22f1)
+- ![Unity](/favicons/Unity.ico) [Unity 2019.4.31f1](https://unity.com/releases/editor/whats-new/2019.4.31f1) - 旧版 Unity，适用于一些旧项目 | [官方页面](https://unity.com/releases/editor/whats-new/2019.4.31f1) | [加速下载](https://openlist.kipfel.link/vrchat/unity/UnitySetup64-2019.4.31f1)
 - ![VCC](/favicons/vcc.docs.vrchat.com.png) [VRChat Creator Companion (VCC)](https://vrchat.com/download/vcc) - VRChat 官方推荐的 Unity 项目管理工具，用于管理 SDK、包依赖 | [官方下载](https://vrchat.com/download/vcc) | [加速下载](https://openlist.kipfel.link/vrchat/vrcaht%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/VRChat_CreatorCompanion)
 - ![ALCOM](/favicons/vrc-get.anatawa12.com.png) [ALCOM](https://vrc-get.anatawa12.com/zh-hans/alcom/) - VCC 的非官方开源替代工具，更轻量快速，建议使用 | [官方下载](https://vrc-get.anatawa12.com/zh-hans/alcom/) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/ALCOM/1.1.6)
 
@@ -98,7 +99,7 @@ priority: 6
 
 > ⚠️ **警告**：本站仅提供作者授权的二开工程文件，工程文件内包含的模型素体及贴图，付费插件等内容均不提供加速下载，请前往对应的 Booth 进行获取。
 
-- ![闲鱼](/favicons/xianyu.png) [小黄鱼｜柠萌小星](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) - 仅提供作者的二开工程文件(在此感谢提供) | [闲鱼链接](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) | [原链接](https://17706767472.lanzouo.com/b0xwff2qj) | [加速下载](https://openlist.kipfel.link/vrchat/免费二开工程文件/星夜绘梦-闲鱼搜索：柠萌小星)
+- ![闲鱼](/favicons/xianyu.png) [小黄鱼｜柠萌小星](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) - 仅提供作者的二开工程文件(在此感谢提供) | [闲鱼链接](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) | [原链接](https://17706767472.lanzouo.com/b0xwff2qj) | [加速下载](https://openlist.kipfel.link/vrchat/免费二开工程文件/闲鱼：柠萌小星)
 
 ## 改模教程
 
