@@ -550,7 +550,7 @@ export default function App() {
       <aside className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''} ${contentVisible ? 'sidebar-visible' : ''}`}>
         <div className="sidebar-header">
           <div className="sidebar-logo">
-            <LayoutGrid className="sidebar-logo-icon" />
+            <img src="https://logo.kipfel.link/logos/favicon.svg" alt="VRChat 导航" className="sidebar-logo-icon" />
             <span className="sidebar-logo-text">VRChat 导航</span>
           </div>
           <p className="sidebar-stats">{categories.length} 分类 · {totalLinks} 链接</p>
