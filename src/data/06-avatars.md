@@ -26,6 +26,12 @@ priority: 6
 
 - ![GitHub](/favicons/github.com.png) [VRM Add-on](https://github.com/vrm-c/UniVRM) - VRM格式导入导出，Blender官方VRM支持插件 | [GitHub](https://github.com/vrm-c/UniVRM) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/VRM%20Add-on)
 
+## 3D 建模工具
+
+- ![Blender3D](/favicons/www.blender.org.png) [Blender3D](https://www.blender.org/) - 强大的开源3D建模软件，可用于创建自定义模型、道具和世界场景
+- ![MagicaVoxel](/favicons/github.com.png) [MagicaVoxel](https://ephtracy.github.io/) - 一款免费的体素艺术编辑器，非常适合创建像素风格的3D模型和世界元素
+- ![Meshroom](/favicons/github.com.png) [Meshroom](https://alicevision.github.io/#meshroom) - 开源摄影测量软件，能够从照片中创建逼真的3D模型
+
 ## Unity 插件
 
 ### 基础改模工具
@@ -75,6 +81,7 @@ priority: 6
 - ![lilToon](/favicons/booth.pm.png) [lilToon](https://lilxyzw.booth.pm/items/3087170) - VRChat中十分常见的日系风格着色器。具有一键预设、可保存自定义配置等特点，能实现动画/插画风格的渲染效果 | [Booth](https://lilxyzw.booth.pm/items/3087170) | [GitHub](https://github.com/lilxyzw/lilToon) | [VPM加速](https://vpm.vrczh.org/vpm/lilxyzw) | [加速下载](https://openlist.kipfel.link/vrchat/%E7%9D%80%E8%89%B2%E5%99%A8/lilToon)
 - ![Poiyomi](/favicons/www.poiyomi.com.png) [Poiyomi Shaders](https://www.poiyomi.com) - 功能强大且通用的免费开源着色器，专为VRChat定制。提供多种着色模式和高级光照处理 | [官网](https://www.poiyomi.com) | [GitHub](https://github.com/poiyomi/PoiyomiToonShader)
 - ![GitLab](/favicons/gitlab.com.png) [Silent Cel Shading Shader (SCSS)](https://gitlab.com/s-ilent/SCSS) - 提供高质量的赛璐珞风格（Cel Shading）渲染。支持多种混合模式和Matcap，可在世界空间或切线空间锚定
+- ![LTCGI](/favicons/github.com.png) [LTCGI](https://github.com/PiMaker/ltcgi) - 优化的即插即用实时区域照明解决方案，用于VRChat世界，提供更真实的光照效果
 
 ### 着色器工具
 
@@ -91,13 +98,15 @@ priority: 6
 ### 素材资源
 
 - ![Freesound](/favicons/freesound.org.png) [Freesound](https://freesound.org) - 协作式的CC许可音频样本在线数据库。拥有超过40万种声音和音效
-- ![cc0textures](/favicons/cc0textures.com.png) [cc0textures](https://cc0textures.com) - 提供高质量CC0许可（可免费用于商业用途）纹理贴图的网站。资源包含漫反射、法线、粗糙度等贴图。注意：该网站现已更名为 ambientCG
+- ![Soundbible](/favicons/soundbible.com.png) [Soundbible](http://soundbible.com/) - 提供大量免费音效资源，可用于VRChat世界的声音设计
+- ![3dtextures](/favicons/3dtextures.me.png) [3dtextures.me](https://3dtextures.me/) - 提供免费的无缝PBR纹理资源
+- ![Polyhaven](/favicons/polyhaven.com.png) [Polyhaven](https://polyhaven.com/) - 公共3D资产库，提供免费的3D模型、纹理和HDRI
 
 ## 二开资源
 
 ### 闲鱼的二开工程文件
 
-> ⚠️ **警告**：本站仅提供作者授权的二开工程文件，工程文件内包含的模型素体及贴图，付费插件等内容均不提供加速下载，请前往对应的 Booth 进行获取。
+> ⚠️ **警告**：本站仅提供作者授权的二开工程文件，文件内包含的模型素体及贴图，付费插件等内容均不提供加速下载，请前往对应的 Booth 进行获取。
 
 - ![闲鱼](/favicons/xianyu.png) [小黄鱼｜柠萌小星](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) - 仅提供作者的二开工程文件(在此感谢提供) | [闲鱼链接](https://m.tb.cn/h.RGFVNBy?tk=3kRegQbsNFD) | [原链接](https://17706767472.lanzouo.com/b0xwff2qj) | [加速下载](https://openlist.kipfel.link/vrchat/免费二开工程文件/闲鱼：柠萌小星)
 

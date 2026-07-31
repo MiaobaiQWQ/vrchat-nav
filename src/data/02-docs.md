@@ -29,6 +29,14 @@ priority: 2
 - ![VRCLibrary](/favicons/docs.vrchat.com.png) [VRCLibrary](https://vrclibrary.com/) - 英文社区Wiki，包含世界创建、光照、材质、优化、预制件数据库等内容
 - ![Uhiyama Lab 教程](/favicons/docs.vrchat.com.png) [Uhiyama Lab 教程](https://uhiyama-lab.com/en/notes/vrchat/) - 日文/英文个人教程，包含 UdonSharp 脚本、交互逻辑、开发技巧等内容
 
+## 世界优化与技术指南
+
+- ![VRCLibrary](/favicons/vrclibrary.com.png) [遮挡剔除 (Occlusion Culling)](https://vrclibrary.com/wiki/books/occlusion-culling-and-you) - 在渲染时剔除被其他物体遮挡的不可见几何体，从而减少绘制调用和提高性能
+- ![VRCLibrary](/favicons/vrclibrary.com.png) [后期处理 (Post Processing)](https://vrclibrary.com/wiki/books/post-processing-and-you) - 在场景渲染完成后应用的图像效果，如颜色校正、模糊、环境光遮蔽等
+- ![VRCLibrary](/favicons/vrclibrary.com.png) [光照烘焙 (Light Baking)](https://vrclibrary.com/wiki/books/light-baking-and-you) - 预先计算场景中的光照信息并存储到纹理中，以提高运行时性能和光照质量
+- ![VRCLibrary](/favicons/vrclibrary.com.png) [反射探头 (Reflection Probes)](https://vrclibrary.com/wiki/books/reflection-probes-and-you) - 用于捕捉周围环境的图像并将其存储为立方体贴图，以便物体能够反射周围环境
+- ![VRCLibrary](/favicons/vrclibrary.com.png) [UdonSharp 开发实践](https://vrclibrary.com/wiki/books/varneons-udonsharp-development-practices) - 针对UdonSharp脚本开发的最佳实践，包括性能优化和安全建议
+
 ## 其他文档
 
 - ![视频解析文档](/favicons/MM.png) [视频解析文档](https://docs.api.vrchat.kipfel.wiki) - 关于视频解析网站的文档

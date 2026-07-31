@@ -50,3 +50,8 @@ priority: 5
 
 - ![GitHub](/favicons/github.com.png) [VRChat-FixTool](https://github.com/MLFK-MLFK/VRChat-FixTool) - VRChat 优化工具箱，支持 ReShade，简化高级启动项配置(不清楚是否会被封号) | [GitHub](https://github.com/MLFK-MLFK/VRChat-FixTool) | [哔哩哔哩](https://www.bilibili.com/video/BV16mTu62EG5/) | [加速下载](https://openlist.kipfel.link/vrchat/GitHub/VRChat-FixTool)
 
+## 世界开发与测试
+
+- ![GitHub](/favicons/github.com.png) [VRWorld Toolkit](https://github.com/oneVR/VRWorldToolkit) - Unity编辑器扩展，旨在使VRChat世界创建更加便捷，提供许多质量改进和自动化功能
+- ![GitHub](/favicons/github.com.png) [CyanEmu](https://github.com/CyanLaser/CyanEmu) - VRChat客户端模拟器，允许在Unity编辑器中测试VRChat世界，无需上传到VRChat平台
+
