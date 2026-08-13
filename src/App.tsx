@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { Search, Bookmark, Sun, Moon, Hash, ChevronRight, X, LayoutGrid, Menu, FolderOpen, Globe, BookOpen, Users, Code, Gamepad2, User } from 'lucide-react';
+import { Search, Bookmark, Sun, Moon, Hash, ChevronRight, X, Menu, FolderOpen, Globe, BookOpen, Users, Code, Gamepad2, User } from 'lucide-react';
 import { parseMarkdownFile, getDomainFavicon } from '@/utils/mdParser';
 import SplashScreen from '@/components/SplashScreen';
+import WallpaperSlider from '@/components/WallpaperSlider';
 import type { NavCategory, NavItem, NavSubCategory } from '@/types/nav';
 import './App.css';
 
@@ -311,6 +312,7 @@ export default function App() {
   const [currentPsIndex, setCurrentPsIndex] = useState(0);
   const [psTransitioning, setPsTransitioning] = useState(false);
   const psIntervalRef = useRef<number | null>(null);
+  const viewTransitionRef = useRef<{ finished: Promise<void> } | null>(null);
 
   // 预加载图片函数
   const preloadImage = useCallback((src: string): Promise<void> => {
@@ -403,14 +405,41 @@ export default function App() {
     ];
   }, [preloadImage, collectFaviconPaths]);
 
-  const toggleTheme = useCallback(() => {
-    setTheme(prev => {
-      const next = prev === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
+  const toggleTheme = useCallback((e?: React.MouseEvent<HTMLButtonElement>) => {
+    const next = theme === 'light' ? 'dark' : 'light';
+    const root = document.documentElement;
+    const applyTheme = () => {
+      root.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-      return next;
-    });
-  }, []);
+    };
+    // 用 View Transitions 圆形揭示切换：新主题从按钮处圆形展开，避免交叉淡化产生灰色混合中间色
+    const docWithVT = document as Document & {
+      startViewTransition?: (callback: () => void) => { finished: Promise<void> };
+    };
+    if (docWithVT.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // 圆心设为被点击的切换按钮中心
+      const btn = e?.currentTarget;
+      if (btn) {
+        const rect = btn.getBoundingClientRect();
+        root.style.setProperty('--vt-x', `${rect.left + rect.width / 2}px`);
+        root.style.setProperty('--vt-y', `${rect.top + rect.height / 2}px`);
+      }
+      // 切换期间冻结全站过渡，避免毛玻璃元素在快照下重绘导致揭示动画卡顿
+      root.classList.add('vt-running');
+      const vt = docWithVT.startViewTransition(applyTheme);
+      viewTransitionRef.current = vt;
+      vt.finished.catch(() => undefined).then(() => {
+        // 只有最新一次切换结束时才解冻，避免连续点击提前移除
+        if (viewTransitionRef.current === vt) {
+          root.classList.remove('vt-running');
+          viewTransitionRef.current = null;
+        }
+      });
+    } else {
+      applyTheme();
+    }
+    setTheme(next);
+  }, [theme]);
 
   const handleSplashComplete = useCallback(() => {
     setShowSplash(false);
@@ -527,7 +556,9 @@ export default function App() {
   }
 
   return (
-    <div className={`app ${contentVisible ? 'app-visible' : ''}`}>
+    <>
+      <WallpaperSlider />
+      <div className={`app ${contentVisible ? 'app-visible' : ''}`}>
       {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
       
       {/* 图片弹窗 */}
@@ -748,6 +779,7 @@ export default function App() {
           </footer>
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }
