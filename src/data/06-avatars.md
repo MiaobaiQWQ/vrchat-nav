@@ -15,6 +15,7 @@ priority: 6
 ### VPM 仓库源
 
 - ![VCC 中文镜像](/favicons/vcc.docs.vrchat.com.png) [VCC 中文镜像](https://vcc.vrczh.org/) - VPM 仓库源的国内镜像,提示:VRChat Creator Companion (不推荐,patcher 现不再维护,请使用 ALCOM)
+- ![VPM 仓库源](/favicons/vcc.docs.vrchat.com.png) [小万 VPM 仓库源](https://vcc.xone.uno/) - VPM 仓库源，由小万提供
 
 ## Blender 插件
 
